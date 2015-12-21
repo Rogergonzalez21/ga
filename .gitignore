@@ -1,0 +1,9 @@
+*.pdf
+*.pyc
+env/
+*.txt
+credentials.dat
+main.sh
+client_secrets.json
+private_data.py
+email_body.py

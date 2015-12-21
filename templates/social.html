@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	    @page {
+	    	margin:35px;
+	    }
+	</style>
+</head>
+<body>
+<h1>Reporte de Redes Sociales - {{ start_date }} / {{ end_date }}</h1>
+<table>
+<thead>
+	<th>Fuente</th>
+	<th>Pagina de llegada</th>
+	<th>Sesiones</th>
+	<th>Porcentaje de rebote</th>
+	<th>Duracion (m:s)</th>
+</thead>
+{% for source, landing, value, bounce, duration in data %}
+        <tr>
+        	<td style="text-align:center;">{{ source }}</td>
+        	<td>{{ landing|truncate(30) }}</td>
+        	<td style="text-align:center;">{{ value }}</td>
+        	<td style="text-align:center;">{{ bounce|int }}%</td>
+        	<td style="text-align:center;">{{ duration }}</td>
+        </tr>
+{% endfor %} 
+</table>
+
+<h1>Total de sesiones: {{ total }}</h1>
+<h2>Total Facebook: {{ total_fb }}</h2>
+<h2>Total Twitter: {{ total_tw }}</h2>
+<h2>Total LinkedIn: {{ total_lkin }}</h2>
+<h2>Total Otros: {{ total_others }}</h2>
+</body>
+</html>
